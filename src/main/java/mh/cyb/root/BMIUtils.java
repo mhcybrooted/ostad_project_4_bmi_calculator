@@ -1,6 +1,6 @@
 package mh.cyb.root;
 
-public interface BMI {
+public interface BMIUtils {
 
     double convertHeightToMeters(String height);
     String getBMICategory(double bmi);

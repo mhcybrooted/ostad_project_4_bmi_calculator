@@ -1,8 +1,8 @@
 package mh.cyb.root.impl;
 
-import mh.cyb.root.BMI;
+import mh.cyb.root.BMIUtils;
 
-public class BMIImpl implements BMI {
+public class BMIUtilsImpl implements BMIUtils {
     @Override
     public double convertHeightToMeters(String height) {
         height = height.toLowerCase().replaceAll(" ", "");

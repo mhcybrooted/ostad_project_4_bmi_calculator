@@ -1,13 +1,13 @@
 package mh.cyb.root;
 
-import mh.cyb.root.impl.BMIImpl;
+import mh.cyb.root.impl.BMIUtilsImpl;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        BMI bmiUtils = new BMIImpl();
+        BMIUtils bmiUtils = new BMIUtilsImpl();
 
         System.out.print("Enter weight in kg: ");
         double weight = sc.nextDouble();

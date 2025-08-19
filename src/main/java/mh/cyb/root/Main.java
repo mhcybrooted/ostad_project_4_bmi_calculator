@@ -1,17 +1,29 @@
 package mh.cyb.root;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import mh.cyb.root.impl.BMIImpl;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner sc = new Scanner(System.in);
+        BMI bmiUtils = new BMIImpl();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.print("Enter weight in kg: ");
+        double weight = sc.nextDouble();
+        sc.nextLine();
+
+        System.out.print("Enter height (e.g., 5ft10in, 4ft 2in, 10in, 5ft): ");
+        String heightStr = sc.nextLine();
+
+        System.out.println("\n");// for looking smart
+
+        double heightInMeters = bmiUtils.convertHeightToMeters(heightStr);
+        double bmi = weight / (heightInMeters * heightInMeters);
+
+        String category = bmiUtils.getBMICategory(bmi);
+        bmiUtils.printBMIResult(bmi, category);
+
+
     }
 }
